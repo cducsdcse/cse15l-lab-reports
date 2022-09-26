@@ -1,1 +1,1 @@
-![Image](file:///Users/charlottedong/Desktop/testScreenshot.png)
+![Image](testScreenshot.png)
