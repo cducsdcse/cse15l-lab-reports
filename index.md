@@ -7,4 +7,3 @@ Hello, world!
 [Lab Report 2 (Week1)](CSE15L lab1 report.pdf)  
 **Links to other file(s) in repository:**  
 [pa0anotherFile](https://cducsdcse.github.io/cse15l-lab-reports/pa0anotherFile.html)   
-
