@@ -1,6 +1,6 @@
 # Charlotte Dong Lab Report2 (Week1)  
   
-**Step 1 Installing VSCode**  
+##Step 1 Installing VSCode  
 Download Visual Studio Code from the [official website](https://code.visualstudio.com/download). Open it, you should see a window like the screenshot below.  
   
 ![Image](lab1-screenshots/lab1-openvscode.png)  
