@@ -39,7 +39,7 @@
 
 ## Step 4 Moving Files with scp  
 * Create a java file on **your computer** called **WhereAmI.java**, compile and run it.  
-* Now try this command: **scp WhereAmI.java cs15lfa22zz@ieng6.ucsd.edu:~/**, you should be asked to input your password just like ssh login.  
+* Now try this command: **scp WhereAmI.java cs15lfa22ji@ieng6.ucsd.edu:~/**, you should be asked to input your password just like ssh login.  
 * Then log in with **ssh** and use **ls**. You should find the file in your home directory.  
 * This **scp** ("secure copy") command copies file from one computer to another. In this case, it copies the WhereAmI.java file from your local computer to the remote server.  
 * The WhereAmI code should work the same both local and remote, but the printed out results are different. When you run this on the client, your local system name, username and directory gets print out; but when you run this on the server, the remote system name, username and directory gets print out.  
@@ -49,11 +49,14 @@
 
 
 ## Step 5 Setting an SSH Key  
-The first screenshot below is the setup process for an ssh key. Once its setup, you should be able to log in without password.  
+* In order to avoid repetitive work, we could use **ssh-keygen** to ssh without typing your password.  
+* On your computer, type **$ ssh-keygen**, then follow the prompt instructions to complete the process. Note that when you run into **"Enter file in which to save the key (/User/joe/.ssh/id_rsa):"**, press enter again.  
+* On client, **$ ssh cs15lfa22ji@ieng.ucsd.edu**, enter your password. Then on server, type **mkdir .ssh**, logout. Then on client again, **scp /Users/joe/.ssh/id_rsa.pub cs15lfa22@ieng6.ucsd.edu:~/.ssh/authorized_keys**, use your username and path.  
+* The first screenshot below is the setup process for an ssh key. Once its setup, you should be able to log in without password.  
   
 ![Image](lab1-screenshots/lab1-step5-1.png)  
   
-After completing the above steps, you could login to your account without password, and the process should be similar to mine in the screenshot below.  
+**After completing the above steps, you could login to your account without password, and the process should be similar to mine in the screenshot below.**  
   
 ![Image](lab1-screenshots/lab1-step5-2.png)
   
