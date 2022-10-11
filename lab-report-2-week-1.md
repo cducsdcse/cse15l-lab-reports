@@ -63,8 +63,13 @@
 
 
 ## Step 6 Optimizing Remote Running  
-Below are two efficient commands. A third efficient command is to use the up-arrow to pull up the last command that was run.  
+* Now try some efficient commands:  
+**ssh cs15lfa22ji@ieng.ucsd.edu "ls"** : this command automatically ssh into your account and list home directory of the remote server.  
+**cp WhereAmI.java; javac WhereAmI.java; java WhereAmI** : using **";"** allows you to run multiple commands in one line.  
+**Up arrow on your keyboard allows you to recall previous commands.**  
+* The screenshot below demonstrate the efficient commands mentioned above.  
   
 ![Image](lab1-screenshots/lab1-step6.png)  
-  
+
+
   
