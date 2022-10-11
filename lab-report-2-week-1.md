@@ -38,7 +38,11 @@
 
 
 ## Step 4 Moving Files with scp  
-The code should work the same both local and remote, but the printed out results are different. When I run this on the client, my local system name, username and directory gets print out; but when I run this on the server, the remote system name, username and directory gets print out.  
+* Create a java file on **your computer** called **WhereAmI.java**, compile and run it.  
+* Now try this command: **scp WhereAmI.java cs15lfa22zz@ieng6.ucsd.edu:~/**, you should be asked to input your password just like ssh login.  
+* Then log in with **ssh** and use **ls**. You should find the file in your home directory.  
+* This **scp** ("secure copy") command copies file from one computer to another. In this case, it copies the WhereAmI.java file from your local computer to the remote server.  
+* The WhereAmI code should work the same both local and remote, but the printed out results are different. When you run this on the client, your local system name, username and directory gets print out; but when you run this on the server, the remote system name, username and directory gets print out.  
   
 ![Image](lab1-screenshots/lab1-step4.png) 
   
