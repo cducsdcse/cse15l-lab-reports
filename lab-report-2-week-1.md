@@ -9,7 +9,7 @@
     
 ## Step 2 Remotely Connecting   
 * Ssh into your course-specific account using command: **$ ssh cs15lfa22ji@ieng.ucsd.edu**, but with **ji** replaced by your own course-specific account.   
-* If this is your first time connection to this server, reply **yes** to the question **"Are you sure you want to continue connecting (yes/no/[fingerprint])?"**  
+* If this is your first time connecting to this server, reply **yes** to the question **"Are you sure you want to continue connecting (yes/no/[fingerprint])?"**  
 * If you see the successful login message as below, your computer (client) is connected to the server in the CSE basement.  
   
 ![Image](lab1-screenshots/lab1-step2.png)  
@@ -17,12 +17,12 @@
 
     
 ## Step 3 Trying Commands  
-* Try running some commands on the server and on your personal computer. Here are some useful commands to try:  
+* Try running some commands on the server and on your personal computer. Here are some fun commands to try:  
 **cd ~**  
 **cd**  
 **ls -lat**  
 **ls -a**   
-**ls /home/linux/ieng6/cs15lfa22/cs15lfa22abc** where abc should be replaced by your or your friend's username  
+**ls /home/linux/ieng6/cs15lfa22/cs15lfa22ji**  
 **cp /home/linux/ieng6/cs15lfa22/public/hello.txt ~/**  
 **cat /home/linux/ieng6/cs15lfa22/public/hello.txt**  
 * In summary:  
@@ -54,7 +54,9 @@
 * On client, **$ ssh cs15lfa22ji@ieng.ucsd.edu**, enter your password. Then on server, type **mkdir .ssh**, logout. Then on client again, **scp /Users/joe/.ssh/id_rsa.pub cs15lfa22@ieng6.ucsd.edu:~/.ssh/authorized_keys**, use your username and path.  
 * The first screenshot below is the setup process for an ssh key. Once its setup, you should be able to log in without password.  
   
+  
 ![Image](lab1-screenshots/lab1-step5-1.png)  
+  
   
 **After completing the above steps, you could login to your account without password, and the process should be similar to mine in the screenshot below.**  
   
@@ -64,9 +66,9 @@
 
 ## Step 6 Optimizing Remote Running  
 * Now try some efficient commands:  
-**ssh cs15lfa22ji@ieng.ucsd.edu "ls"** : this command automatically ssh into your account and list home directory of the remote server.  
-**cp WhereAmI.java; javac WhereAmI.java; java WhereAmI** : using **";"** allows you to run multiple commands in one line.  
-**Up arrow on your keyboard allows you to recall previous commands.**  
+- **ssh cs15lfa22ji@ieng.ucsd.edu "ls"** : this command automatically ssh into your account and list home directory of the remote server.  
+- **cp WhereAmI.java; javac WhereAmI.java; java WhereAmI** : using **";"** allows you to run multiple commands in one line.  
+- **Up arrow on your keyboard allows you to recall previous commands.**  
 * The screenshot below demonstrate the efficient commands mentioned above.  
   
 ![Image](lab1-screenshots/lab1-step6.png)  
