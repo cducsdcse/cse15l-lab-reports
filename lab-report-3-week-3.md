@@ -55,4 +55,38 @@ class SearchEngine {
     }
 }
 ```  
+* To build and run the server, type **javac Server.java SearchEngine.java** and **java SearchEngine 4000** at the next line. This calls the **SearchEngine** and starts a new server. Your terminal should be similar to this:  
+  
+![Image](lab2-screenshots/commandlinelink.png)  
+  
+* Then visit the link from your browser. The webpage should display **Hello** since you are at the root directory. You should see something like this:  
+  
+![Image](lab2-screenshots/newhello.png)  
+  
+* To test your code, try some path and queries examples as below:  
+```
+/add?s=toadd  
+/add?s=apple  
+/add?s=pineapple  
+/search?s=app  
+```  
+* **/add?s=toadd** calls the **handleRequest** method in class **Handler**. Since the **else if** statement is met, the method will add the new string to the end of the **ArrayList<String> lst** (which now contains **"toadd"**)and update the **int count** field to **1**, then display **1 string(s) added**.  
+  
+![Image](lab2-screenshots/newtoadd.png)  
+  
+* Similarly, **/add?s=apple** calls the **handleRequest** method in class **Handler**. Since the **else if** statement is met, the method will add the new string to the end of the **ArrayList<String> lst** (which now contains **"toadd"** and **"apple"**) and update the **int count** field to **2**, then display **2 string(s) added**.  
+  
+![Image](lab2-screenshots/newapple.png)  
+  
+* Like the previous ones, **/add?s=pineapple** calls the **handleRequest** method in class **Handler**. Since the **else if** statement is met, the method will add the new string to the end of the **ArrayList<String> lst** (which now contains **"toadd"**, **"apple"** and **pineapple**) and update the **int count** field to **3**, then display **3 string(s) added**.  
+  
+![Image](lab2-screenshots/newpineapple.png)  
+  
+* Now **/search?s=app** does something different. It calls the **handleRequest** method in class **Handler**, but meets the **else** statement. The method will loop through all elements in **ArrayList<String> lst** and return the elements that contains **"app"**, in this case, it should return **apple** and **pineapple**.  
+  
+![Image](lab2-screenshots/newsearch.png)  
+  
+  
+## Part 2 Debugging (Week3)  
+
 
