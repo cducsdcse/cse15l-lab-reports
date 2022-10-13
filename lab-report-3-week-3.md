@@ -5,21 +5,23 @@
 * This **SearchEngine.java** supports a path for adding new strings to the list as well as a path for searching and returning all strings containing a given substring.  
 * Below is my code:  
   
-  ```
+```
 class Handler implements URLHandler {
 
     ArrayList<String> lst = new ArrayList<>();
-    
+    int count = 0;
+
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
             return "Hello";
         }
         else if (url.getPath().contains("/add")) {
             String[] newstr = url.getQuery().split("=");
-            for (String s : newstr){
-                lst.add(s);
+            for (int i = 1; i<newstr.length; i+=1){
+                lst.add(newstr[i]);
+                count += 1;
             }
-            return "String added";
+            return count + " string(s) added";
         }
         else {
             System.out.println("Path: " + url.getPath());
@@ -34,7 +36,7 @@ class Handler implements URLHandler {
                     return toReturn;
                 }
             }
-            return "404 Not Found!";
+            return "404 Not Found";
         }
     }
 }
