@@ -99,7 +99,7 @@ class SearchEngine {
 	}
 ```  
 * **Symptom:** In the test shown above, the expected and the actual **differed at index 2**, **expected 3 but was 1**. The entire **expected** output is **{1,2,3}** while the **actual** output is **{1,2,1}**.  
-* **Bug:** The bug is at the line ```arr[i] = arr[arr.length - i - 1];```   
+* **Bug:** The bug is at the line `arr[i] = arr[arr.length - i - 1];`     
 * **ArrayTests:** (testReverseInPlace1 is the passed test of the fixed method; testReverseInPlace2 is the failed test of the original method)  
   
 ![Image](lab3-screenshots/arrtests.png)  
