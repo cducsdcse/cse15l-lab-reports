@@ -87,7 +87,7 @@ class SearchEngine {
 ![Image](lab2-screenshots/newsearch.png)  
   
   
-## Part 2 Debugging (Week3)  
+## Part 2 Debugging reverInPlace in ArrayExamples.java (Week3)  
 * **reverseInPlace method in ArrayExamples overview:** This method is designed to reverse the order of elements in the array, but failed to do so because it tried to update the element to a new value without store its original value first, so for an input array with size larger than 0, its output of this method should be a mirrored array with the original second half values on both sides.  
   
 * **Failure-induced input:** In this case, **int[] input1 = { 3,2,1 }** and **ArrayExamples.reverseInPlace(input1)** in **testReverseInPlace2**.  
@@ -101,7 +101,7 @@ class SearchEngine {
 ```  
 * **Symptom:** In the test shown above, the expected and the actual **differed at index 2**, **expected 3 but was 1**. The entire **expected** output is **{1,2,3}** while the **actual** output is **{1,2,1}**.  
   
-* **Bug:** The bug is at the line `arr[i] = arr[arr.length - i - 1];`    
+* **Bug:** The bug is at the line `arr[i] = arr[arr.length - i - 1];` in the original method.    
 
 * **Fixed code:**  To fix the code, create an int variable **temp** inside the for loop to **store the original value** of the element, and change the iteration of **i** to `i < arr.length/2 `. Below is the fixed code and a screenshot that compares the original method and the fixed method:  
 ```
@@ -119,9 +119,9 @@ static void reverseInPlaceFixed(int[] arr) {
   
 ![Image](lab3-screenshots/arrtests.png)  
   
-* **Explanation:** Looping through the array, the bug `arr[i] = arr[arr.length - i - 1]` tries to update the original element to the element at its reversed position **without storing the value of the original element first**, so the original value of the first half of the array is lost. Therefore, the output of this method is basically a mirrored array with the second half values of the orginal array on both sides. So in the case of **testReverseInPlace2**, the output is {1,2,1} instead of the expected {1,2,3}.  
+* **Explanation:** Looping through the array, the bug `arr[i] = arr[arr.length - i - 1]` tries to update the original element to the element at its reversed position **without storing the value of the original element first**, so the original value of the first half of the array is lost. Therefore, the output of this method is basically a mirrored array with the second half values of the orginal array on both sides. So in the case of **testReverseInPlace2**, the actual output is {1,2,1} instead of the expected {1,2,3}.  
   
     
 
-
+## Part 3 Debugging filter in ArrayExamples.java (Week3)  
 
