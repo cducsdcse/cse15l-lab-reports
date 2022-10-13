@@ -88,7 +88,7 @@ class SearchEngine {
   
   
 ## Part 2 Debugging (Week3)  
-* **reverseInPlace method in ArrayExamples overview:** This method is designed to reverse the order of elements in the array, but failed to do so because it tried to update the element to a new value without store its original value first, so for an input array with size larger than 0, its output of this method should be an array with second half of the orginal array mirrored.  
+* **reverseInPlace method in ArrayExamples overview:** This method is designed to reverse the order of elements in the array, but failed to do so because it tried to update the element to a new value without store its original value first, so for an input array with size larger than 0, its output of this method should be a mirrored array with the original second half values on both sides.  
   
 * **Failure-induced input:** In this case, **int[] input1 = { 3,2,1 }** in **testReverseInPlace2**.  
 ```
