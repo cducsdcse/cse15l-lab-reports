@@ -88,6 +88,13 @@ class SearchEngine {
   
   
 ## Part 2 Debugging reverInPlace in ArrayExamples.java (Week3)  
+* **In Part2 and Part3, in order to run jUnit test on VSCode, use -cp ("class path") commands:**  
+```
+javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java  
+java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ArrayTests
+```  
+  
+
 * **reverseInPlace method in ArrayExamples overview:** This method is designed to reverse the order of elements in the array, but failed to do so because it tried to update the element to a new value without store its original value first, so for an input array with size larger than 0, its output of this method should be a mirrored array with the original second half values on both sides.  
   
 * **Failure-induced input:** In this case, **int[] input1 = { 3,2,1 }** and **ArrayExamples.reverseInPlace(input1)** in **testReverseInPlace2**.  
@@ -124,13 +131,6 @@ static void reverseInPlaceFixed(int[] arr) {
     
 
 ## Part 3 Debugging filter in ListExamples.java (Week3)  
-* **In Part3 and Part4, in order to run jUnit test on VSCode, use -cp ("class path") commands:**  
-```
-javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java  
-java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ArrayTests
-```  
-  
-  
 * **filter method in ListExamples overview:** This method is designed to **return a new list** of elements containing elements that return **true** for **StringChecker** in the same order as tehy appeared in the original list. But it failed to do so because it keep adding elements that return true at the beginning of the new list instead of at the end. (My implementation of StringCheker is to check whether the string **is longer than 3 characters**.)  
   
 * **Failure-induced input:** In this case, `ListExamples.filter(lst,new LongerThan3())` in **testFilter**.  
