@@ -123,5 +123,46 @@ static void reverseInPlaceFixed(int[] arr) {
   
     
 
-## Part 3 Debugging filter in ArrayExamples.java (Week3)  
+## Part 3 Debugging filter in ListExamples.java (Week3)  
+* **filter method in ListExamples overview:** This method is designed to **return a new list** of elements containing elements that return **true** for **StringChecker** in the same order as tehy appeared in the original list. But it failed to do so because it keep adding elements that return true at the beginning of the new list instead of at the end. (My implementation of StringCheker is to check whether the string **is longer than 3 characters**.)  
+  
+* **Failure-induced input:** In this case, `ListExamples.filter(lst,new LongerThan3())` in **testFilter**.  
+```
+@Test 
+public void testFilter() {
+    String[] str = {"abc","abcd","edcba","a"};
+    List<String> lst = Arrays.asList(str);
+    String[] str2 ={"abcd","edcba"};
+    List<String> exp = Arrays.asList(str2);
+    assertEquals(exp, ListExamples.filter(lst,new LongerThan3()));
+}
+```  
+  
+* **Symptom:** In the test shown above, the expected and the actual differed, **expected ["abcd","edcba"], but was ["edcba","abcd"]**.  
+  
+* **Bug:** The bug is at the line `result.add(0, s);` of the original method.  
+  
+* **Fixed code:** To fix the code, simply change `result.add(0, s);` to `result.add(s);` so that the element **gets added to the back** and **displays in the order of appearance in the original list**. Below is the fixed code and a screenshot that compares the original method and the fixed method:  
+```
+static List<String> filterFixed(List<String> list, StringChecker sc) {
+    List<String> result = new ArrayList<>();
+    for(String s: list) {
+      if(sc.checkString(s)) {
+        result.add(s); 
+      }
+    }
+    return result;
+}
+```  
+  
+![Image](lab3-screenshots/listmethods.png)  
+  
+* **ListTests:** (testFilterFixed is the passed test of the fixed method; testFilter is the failed test of the original method)  
+  
+![Image](lab3-screenshots/listtests.png)  
+  
+* **Explanation:** Looping through elements in the original list, the original filter method checks if an element returns true for StringChecker, and if so, `result.add(0, s);` **add it to index 0 (the beginning)** of the new list, instead of appending it to the end. Therefore, the output of the input of [abc","abcd","edcba","a"] in **testFilter** will return ["edcba","abcd"] instead of the expected ["abcd","edcba"].  
+  
+  
+
 
