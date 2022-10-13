@@ -70,19 +70,19 @@ class SearchEngine {
 /add?s=pineapple  
 /search?s=app  
 ```  
-* **/add?s=toadd** calls the **handleRequest** method in class **Handler**. Since the **else if** statement is met, the method will add the new string to the end of the **ArrayList<String> lst** (which now contains **"toadd"**)and update the **int count** field to **1**, then display **1 string(s) added**.  
+* **/add?s=toadd** calls the **handleRequest** method in class **Handler**. Since the **else if** statement is met, the method will add the new string to the end of the **String ArrayList lst** (which now contains **"toadd"**)and update the **int count** field to **1**, then display **1 string(s) added**.  
   
 ![Image](lab2-screenshots/newtoadd.png)  
   
-* Similarly, **/add?s=apple** calls the **handleRequest** method in class **Handler**. Since the **else if** statement is met, the method will add the new string to the end of the **ArrayList<String> lst** (which now contains **"toadd"** and **"apple"**) and update the **int count** field to **2**, then display **2 string(s) added**.  
+* Similarly, **/add?s=apple** calls the **handleRequest** method in class **Handler**. Since the **else if** statement is met, the method will add the new string to the end of the **String ArrayList lst** (which now contains **"toadd"** and **"apple"**) and update the **int count** field to **2**, then display **2 string(s) added**.  
   
 ![Image](lab2-screenshots/newapple.png)  
   
-* Like the previous ones, **/add?s=pineapple** calls the **handleRequest** method in class **Handler**. Since the **else if** statement is met, the method will add the new string to the end of the **ArrayList<String> lst** (which now contains **"toadd"**, **"apple"** and **pineapple**) and update the **int count** field to **3**, then display **3 string(s) added**.  
+* Like the previous ones, **/add?s=pineapple** calls the **handleRequest** method in class **Handler**. Since the **else if** statement is met, the method will add the new string to the end of the **String ArrayList lst** (which now contains **"toadd"**, **"apple"** and **pineapple**) and update the **int count** field to **3**, then display **3 string(s) added**.  
   
 ![Image](lab2-screenshots/newpineapple.png)  
   
-* Now **/search?s=app** does something different. It calls the **handleRequest** method in class **Handler**, but meets the **else** statement. The method will loop through all elements in **ArrayList<String> lst** and return the elements that contains **"app"**, in this case, it should return **apple** and **pineapple**.  
+* Now **/search?s=app** does something different. It calls the **handleRequest** method in class **Handler**, but meets the **else** statement. The method will loop through all elements in the **String ArrayList lst** and return the elements that contains **"app"**, in this case, it should return **apple** and **pineapple**.  
   
 ![Image](lab2-screenshots/newsearch.png)  
   
