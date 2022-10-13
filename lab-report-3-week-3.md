@@ -124,6 +124,13 @@ static void reverseInPlaceFixed(int[] arr) {
     
 
 ## Part 3 Debugging filter in ListExamples.java (Week3)  
+* **In Part3 and Part4, in order to run jUnit test on VSCode, use -cp ("class path") commands:**  
+```
+javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java  
+java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ArrayTests
+```  
+  
+  
 * **filter method in ListExamples overview:** This method is designed to **return a new list** of elements containing elements that return **true** for **StringChecker** in the same order as tehy appeared in the original list. But it failed to do so because it keep adding elements that return true at the beginning of the new list instead of at the end. (My implementation of StringCheker is to check whether the string **is longer than 3 characters**.)  
   
 * **Failure-induced input:** In this case, `ListExamples.filter(lst,new LongerThan3())` in **testFilter**.  
@@ -163,6 +170,6 @@ static List<String> filterFixed(List<String> list, StringChecker sc) {
   
 * **Explanation:** Looping through elements in the original list, the original filter method checks if an element returns true for StringChecker, and if so, `result.add(0, s);` **add it to index 0 (the beginning)** of the new list, instead of appending it to the end. Therefore, the output of the input of [abc","abcd","edcba","a"] in **testFilter** will return ["edcba","abcd"] instead of the expected ["abcd","edcba"].  
   
-  
+
 
 
