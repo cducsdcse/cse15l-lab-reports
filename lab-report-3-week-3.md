@@ -6,10 +6,6 @@
 * Below is my code:  
   
   ```
-import java.io.IOException;
-import java.net.URI;
-import java.util.*;
-
 class Handler implements URLHandler {
 
     ArrayList<String> lst = new ArrayList<>();
@@ -42,7 +38,8 @@ class Handler implements URLHandler {
         }
     }
 }
-
+```  
+```
 class SearchEngine {
     public static void main(String[] args) throws IOException {
         if(args.length == 0){
