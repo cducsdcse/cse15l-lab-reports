@@ -88,5 +88,22 @@ class SearchEngine {
   
   
 ## Part 2 Debugging (Week3)  
+* **reverseInPlace method in ArrayExamples overview:** This method is designed to reverse the order of elements in the array, but failed to do so because it tried to update the element to a new value without store its original value first, so for an input array with size larger than 0, its output of this method should be an array with second half of the orginal array mirrored.  
+* **Failure-induced input:** In this case, **int[] input1 = { 3,2,1 }** in **testReverseInPlace2**.  
+```
+@Test 
+	public void testReverseInPlace2() {
+    int[] input1 = { 3,2,1 };
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{ 1,2,3 }, input1);
+	}
+```  
+* **Symptom:** In the test shown above, the expected and the actual **differed at index 2**, **expected 3 but was 1**. The entire **expected** output is **{1,2,3}** while the **actual** output is **{1,2,1}**.  
+* **Bug:** The bug is at the line ```arr[i] = arr[arr.length - i - 1];```   
+* **ArrayTests:** (testReverseInPlace1 is the passed test of the fixed method; testReverseInPlace2 is the failed test of the original method)  
+  
+![Image](lab3-screenshots/arrtests.png)  
+  
+
 
 
