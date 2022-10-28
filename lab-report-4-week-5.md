@@ -2,7 +2,7 @@
   
 ## find -s
 * **find -s** --> *Cause find to traverse the file hierarchies in **lexicographical order**, i.e., alphabetical order within each directory.* This is especially helpful when we are given a bunch of files in random order, using **find -s** can help organize files in hierachy and lexicographical order, making it more organized and quicker for us to locate files.  
-**Example 1: find -s technical**  below is the code block and result of using **find -s** command on the entire technical folder. Notice that the results are nicely listed in alphabetical order. Because the terminal has limited space, I put the output into a file called **finds.txt**. This is helpful when we are given a directory that contains a lot of subdirectories and files, by using **find -s**, we can get a brief idea of the hierarchy and location of files under a specific subdirectory given the first letters of the file name.    
+* **Example 1: find -s technical**  below is the code block and result of using **find -s** command on the entire technical folder. Notice that the results are nicely listed in alphabetical order. Because the terminal has limited space, I put the output into a file called **finds.txt**. This is helpful when we are given a directory that contains a lot of subdirectories and files, by using **find -s**, we can get a brief idea of the hierarchy and location of files under a specific subdirectory given the first letters of the file name.    
 **command**  
 ```  
 % find -s technical > finds.txt
@@ -1413,7 +1413,7 @@ technical/plos/pmed.0020278.txt
 technical/plos/pmed.0020281.txt
 ```  
   
-**Example 2: find -s file1 file2 file3**  below is the code block and result of using **find -s** command on three files under technical. Notice that even though the 3 files on command line are in random order, **find -s** nicely organizes them in lexicographic (alphabetical) order in the output. Since we are expecting 3 lines of output, which does not take much space, I printed them directly in the terminal instead of putting them in a file. This is helpful when given some files and we need to get a brief idea of their hierachy and lexicpgraphic order compared to each other.  
+* **Example 2: find -s file1 file2 file3**  below is the code block and result of using **find -s** command on three files under technical. Notice that even though the 3 files on command line are in random order, **find -s** nicely organizes them in lexicographic (alphabetical) order in the output. Since we are expecting 3 lines of output, which does not take much space, I printed them directly in the terminal instead of putting them in a file. This is helpful when given some files and we need to get a brief idea of their hierachy and lexicpgraphic order compared to each other.  
 **command**  
 ```  
 % find -s technical/biomed/gb-2002-3-12-research0078.txt technical/911report/chapter-7.txt technical/biomed/1471-2148-1-4.txt
@@ -1425,7 +1425,7 @@ technical/biomed/1471-2148-1-4.txt
 technical/biomed/gb-2002-3-12-research0078.txt  
 ```  
   
-**Example 3: find -s directory1 directory2**  below is the code block and result of using **find -s** command on two directories with * under technical. Notice that even though the 2 directories on command line are in random order, **find -s** expands to all files with directories of technical/plos/pmed.* and technical/911report/*, and organizes them in lexicographic (alphabetical) order in the output. This is helpful when given some directories and we want to find out their hierarchy and a list of all files under the given directory/subdirectory in alphabetical order.  
+* **Example 3: find -s directory1 directory2**  below is the code block and result of using **find -s** command on two directories with * under technical. Notice that even though the 2 directories on command line are in random order, **find -s** expands to all files with directories of technical/plos/pmed.* and technical/911report/*, and organizes them in lexicographic (alphabetical) order in the output. This is helpful when given some directories and we want to find out their hierarchy and a list of all files under the given directory/subdirectory in alphabetical order.  
 **command**  
 ```  
 find -s technical/plos/pmed.* technical/911report/* > findsdifferenthierachies.txt
