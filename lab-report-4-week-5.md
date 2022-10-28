@@ -1653,5 +1653,60 @@ technical/government/Gen_Account_Office/og97050.txt
 ```  
   
   
-## find -
+## find -size  
+* **find -size** --> *True if the file's size, rounded up, in 512-byte blocks is n. If n is followed by a **c**, then the primary is true if the file's size is n bytes (characters).  Similarly if n is followed by a scale indicator then the file's size is compared to n scaled as:*
+             k       kilobytes (1024 bytes)  
+             M       megabytes (1024 kilobytes)  
+             G       gigabytes (1024 megabytes)  
+             T       terabytes (1024 gigabytes)  
+             P       petabytes (1024 terabytes)  
+This is helpful when you want to find files with certain size. Note that k, M, G, T, P are only useful for finding large-size files; since the file sizes under technical are fairly small, I won't demonstrate using find -size with k, M, G, T, P.  
+  
+* **Example 1: find technical/biomed/ -size 100** This commmand looks for files with size, rounded up, in 512-byte blocks is 100 inside the directory technical/biomed. This is helpful when you want to look for some files with certain size under a known directory.  
+**command**  
+```  
+% find technical/biomed/ -size 100
+```  
+**output**  
+``` 
+technical/biomed//1471-2377-3-4.txt
+technical/biomed//gb-2003-4-6-r39.txt
+technical/biomed//gb-2003-4-3-r20.txt
+```  
+  
+* **Example 2: find technical/government -size 10000c** This command looks for files whose size is 10000 bytes (characters) under the directory technical government. This is helpful when you know the general directory to filter and files with size of 10000 bytes (characters). If you know the specific size in byte of the files you want to find, add a **c** after n.  
+**command**  
+```  
+% find technical/government -size 10000c
+```  
+**output**  
+``` 
+technical/government/Gen_Account_Office/og97052.txt
+```  
+  
+* **Example 3: % find * -size 15** This command looks for files whose size, rounded up in 512-byte blocks is 15 under the technical directory. This is helpful when you want to filter and find files with specific size under the current directory.  
+**command**  
+```  
+% find * -size 15
+```  
+**output**  
+``` 
+technical/government/Gen_Account_Office/og97045.txt
+technical/government/Gen_Account_Office/og97046.txt
+technical/government/Media/Legal_system_fails_poor.txt
+technical/government/Media/BergenCountyRecord.txt
+technical/government/Media/Avoids_Budget_Cut.txt
+technical/government/Media/Greedy_Generous.txt
+technical/plos/journal.pbio.0020147.txt
+technical/plos/journal.pbio.0020040.txt
+technical/plos/journal.pbio.0020262.txt
+technical/plos/pmed.0010041.txt
+technical/plos/journal.pbio.0020112.txt
+technical/plos/journal.pbio.0020105.txt
+```  
+  
+  
+
+
+
 
