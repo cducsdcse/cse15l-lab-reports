@@ -1603,3 +1603,55 @@ technical/plos/pmed.0020281.txt
   
   
 ## find -name  
+* * **find -name** --> *True if the last component of the pathname being examined matches pattern. Special shell pattern matching characters (``['', ``]'', ``*'', and ``?'') may be used as part of pattern. These characters may be matched explicitly by escaping them with a backslash (``\'').* This is helpful when you know the pattern of file name that you want to search for, then this command will return all files that matches that pattern.  
+* **Example 1: find technical/911report -name "*.txt"** This command finds and returns all files with name that matches the pattern *.txt. Because the pattern is in quotes, so not expanded, it looks for path *.txt in quotes. It is helpful when you know the directory and type of the file (shown in file name, in this case, .txt) and wants a list of all files with that pattern.  
+**command**  
+```  
+% find technical/911report -name "*.txt"
+```  
+**output**  
+``` 
+technical/911report/chapter-13.4.txt
+technical/911report/chapter-13.5.txt
+technical/911report/chapter-13.1.txt
+technical/911report/chapter-13.2.txt
+technical/911report/chapter-13.3.txt
+technical/911report/chapter-3.txt
+technical/911report/chapter-2.txt
+technical/911report/chapter-1.txt
+technical/911report/chapter-5.txt
+technical/911report/chapter-6.txt
+technical/911report/chapter-7.txt
+technical/911report/chapter-9.txt
+technical/911report/chapter-8.txt
+technical/911report/preface.txt
+technical/911report/chapter-12.txt
+technical/911report/chapter-10.txt
+technical/911report/chapter-11.txt
+```  
+  
+* **Example 2: % find technical/government/Media -name "Fund*.txt"** This command finds and returns all files under the directory **technical/government/Media** with file name that starts with **Fund**. This is helpful when you know the subdirectory of the file you want to find as well as a specific asepct you are interested in (in this case, fund), the command will give you a list of corresponding files.  
+**command**  
+```  
+% find technical/government/Media -name "Fund*.txt"
+```  
+**output**  
+``` 
+technical/government/Media/Funding_cuts_force.txt
+technical/government/Media/Funds_Shortage.txt
+technical/government/Media/Funding_May_Limit.txt
+```  
+  
+* **Example 3: % find technical -name og97050.txt** This command finds and returns the file with the exact name as you typed in. This is helpful when you are looking for a file with a specific name, but you don't know where exactly it is stored.  
+**command**  
+```  
+find technical -name og97050.txt
+```  
+**output**  
+``` 
+technical/government/Gen_Account_Office/og97050.txt
+```  
+  
+  
+## find -
+
