@@ -1603,7 +1603,7 @@ technical/plos/pmed.0020281.txt
   
   
 ## find -name  
-* * **find -name** --> *True if the last component of the pathname being examined matches pattern. Special shell pattern matching characters (``['', ``]'', ``*'', and ``?'') may be used as part of pattern. These characters may be matched explicitly by escaping them with a backslash (``\'').* This is helpful when you know the pattern of file name that you want to search for, then this command will return all files that matches that pattern.  
+* **find -name** --> *True if the last component of the pathname being examined matches pattern. Special shell pattern matching characters (``['', ``]'', ``*'', and ``?'') may be used as part of pattern. These characters may be matched explicitly by escaping them with a backslash (``\'').* This is helpful when you know the pattern of file name that you want to search for, then this command will return all files that matches that pattern.  
 * **Example 1: find technical/911report -name "*.txt"** This command finds and returns all files with name that matches the pattern *.txt. Because the pattern is in quotes, so not expanded, it looks for path *.txt in quotes. It is helpful when you know the directory and type of the file (shown in file name, in this case, .txt) and wants a list of all files with that pattern.  
 **command**  
 ```  
