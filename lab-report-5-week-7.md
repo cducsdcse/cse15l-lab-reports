@@ -8,14 +8,14 @@
 :13,26s/start/base/g<enter>
 ```
 You should be typing something like the screenshot below:  
-![Image](part1-command.png)  
+![Image](lab6-screenshots/part1-command.png)  
 * What this command does is that it first narrow down the line numbers to **13 to 26**, which are the line numbers of the method getFiles, then **locates** all occurrences of **start** and then **changes** every **start** it locates to **base**.  
 * Let me break it down the command for you. **:13,26s/** is narrowing the range of search to line **13 to 26**, which is the line number of the method getFiles.  
 * **:13,26s/start** is **locating all occurences of start** in these lines. By typeing this, the cursor will lead you to the first ocurence of start, which is at the input parameter part. You should see the first **start** gets highlighted just as shown below.  
-![Image](locating-start.png)  
+![Image](lab6-screenshots/locating-start.png)  
 * **:13,26s/start/base/g** is ready to scan through all lines within the range of **line 13 to 26** then change all occurrences of **start** to **base**.  
 * After hitting **enter**, you should see all **start** paramters in getFiles method are changed to **base**, like the screenshot below:  
-![Image](part1-result.png)  
+![Image](lab6-screenshots/part1-result.png)  
   
   
 ## Part 2
