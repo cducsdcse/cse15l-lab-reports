@@ -16,7 +16,7 @@ You should be typing something like the screenshot below:
   
 * Let me break it down the command for you. **:13,26s/** is narrowing the range of search to line **13 to 26**, which is the line number of the method getFiles.  
   
-* **:13,26s/start** is **locating all occurences of start** in these lines. By typeing this, the cursor will lead you to the first ocurence of start, which is at the input parameter part. You should see the first **start** gets highlighted just as shown below.  
+* **:13,26s/start** is **locating all occurences of start** in these lines. By typing this, the cursor will lead you to the first ocurence of start, which is at the input parameter part. You should see the first **start** gets highlighted just as shown below.  
 ![Image](lab6-screenshots/locating-start.png)  
   
 * **:13,26s/start/base/g** is ready to scan through all lines within the range of **line 13 to 26** then change all occurrences of **start** to **base**.  
