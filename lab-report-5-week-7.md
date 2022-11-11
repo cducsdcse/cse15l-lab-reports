@@ -1,7 +1,7 @@
 # Charlotte Dong Lab Report5 (Week7)  
   
 ## Part 1  
-* In this part, I will be describing the process of **task 1**, which changes the name of the **start** parameter of **getFiles** to instead to called **base**.  
+* In this part, I will be describing the process of **task 1**, which changes the name of the **start** parameter of **getFiles** to instead be called **base**.  
 * First, **ssh** into your remote server, then clone this repository to your remote server **git clone https://github.com/ucsd-cse15l-f22/skill-demo1 week6-skill-demo1**. Then **cd** into **week6-skill-demo1**, and use **vim DocSearchServer.java** to open the file using **vim**.  
 * Our group found out a way to change all occurences of a word to a new one using one comman only. Try:  
 ```
