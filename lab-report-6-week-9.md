@@ -68,11 +68,11 @@ After writing the grading script, let's test it out by grading several student s
     
 ![Image](lab7-screenshots/corrected.png)  
   
-* The [second student submission](https://github.com/ucsd-cse15l-f22/list-methods-compile-error) has a syntax error of a missing semicolon, which should cause a compule error. Below is the screenshot of its grade report. Notice that it only received one point for **containing ListExamples.java file**, but did not receive any other points since there is a **compile error** and the grading script exited right after it had failed to compile.  
+* The [second student submission](https://github.com/ucsd-cse15l-f22/list-methods-compile-error) has a **syntax error** of a missing semicolon, which should cause a compule error. Below is the screenshot of its grade report. Notice that it only received one point for **containing ListExamples.java file**, but did not receive any other points since there is a **compile error** and the grading script exited right after it had failed to compile.  
   
 ![Image](lab7-screenshots/syntax.png)  
   
-* The [third student submission](https://github.com/ucsd-cse15l-f22/list-methods-filename) has a great implementation saved in a file with wrong name. Below is the screenshot of its grade report. Notice that it received **0/3 points**, since my grading script **checks for the existence of the file ListExamples.java** and then check for other aspects.  
+* The [third student submission](https://github.com/ucsd-cse15l-f22/list-methods-filename) has a great implementation **saved in a file with wrong name**. Below is the screenshot of its grade report. Notice that it received **0/3 points**, since my grading script **checks for the existence of the file ListExamples.java** and then check for other aspects.  
   
 ![Image](lab7-screenshots/name.png)  
   
