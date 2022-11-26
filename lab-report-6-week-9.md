@@ -68,11 +68,11 @@ After writing the grading script, let's test it out by grading several student s
     
 ![Image](lab7-screenshots/corrected.png)  
   
-* The [second student submission](https://github.com/ucsd-cse15l-f22/list-methods-compile-error) has a **syntax error** of a missing semicolon, which should cause a compule error. Below is the screenshot of its grade report. Notice that it only received one point for **containing ListExamples.java file**, but did not receive any other points since there is a **compile error** and the grading script exited right after it had failed to compile.  
+* The [second student submission](https://github.com/ucsd-cse15l-f22/list-methods-compile-error) has a **syntax error** of a missing semicolon, which should cause a compule error. Below is the screenshot of its grade report. Notice that it only received one point for **containing ListExamples.java file**, but did not receive any other points since there is a **compile error** and the grading script exited right after it failed to compile.  
   
 ![Image](lab7-screenshots/syntax.png)  
   
-* The [third student submission](https://github.com/ucsd-cse15l-f22/list-methods-filename) has a great implementation **saved in a file with wrong name**. Below is the screenshot of its grade report. Notice that it received **0/3 points**, since my grading script **checks for the existence of the file ListExamples.java** and then check for other aspects.  
+* The [third student submission](https://github.com/ucsd-cse15l-f22/list-methods-filename) has a great implementation **saved in a file with wrong name**. Below is the screenshot of its grade report. Notice that it received **0/3 points**, since my grading script **first checks for the existence of the file ListExamples.java** and then check for other aspects. In this case, no such file with name ListExamples.java exists, the program exits early and the student receives 0 points.   
   
 ![Image](lab7-screenshots/name.png)  
   
@@ -82,7 +82,7 @@ After writing the grading script, let's test it out by grading several student s
 * Reminder: as mentioned previously, the third student submission has a **wrong file name**.  
 * Let's trace through the student submission using my grading script. First, my script **removes the current student-submission file** and **git clones** the third student's repository as the current student-submission. Then initializes the variable **grade=0** and **copies the test file TestListExamples.java into student-submission**.  
 * Then at the line **if [ -f ./student-submission/$FILE1 ]**, it checks if $FILE1, which is **ListeExamples.java**, exists in the directory **./student-submission/**, this if condition is **false**, since the student saves the implementations under a file with wrong name. Thus the **then branch** with two echos **doesn't run**.  
-* The **else branch with two echos runs**. It runs the first echo line **echo "$FILE1 not found."**, which is shown in the Server output as "ListExamples.java not found.". Then runs **echo "Grade: [$grade/3]"**, which prints the student's current grade, 0/3 in the Server. Finally exists early at the line **exit 1**.  
+* The **else branch with two echos runs**. It runs the first echo line **echo "$FILE1 not found."**, which is shown in the Server output as **"ListExamples.java not found."**. Then runs **echo "Grade: [$grade/3]"**, which prints the student's current grade **Grade: [0/3]** in the Server. Finally, the program exits early at the line **exit 1**.  
 * The rest of the grading script don't run, since the program exits early in the first else branch (line 22) **exit 1** when no file of name **ListExamples** were found under the directory **./student-submission/**.  
   
   
