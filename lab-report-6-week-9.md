@@ -77,6 +77,13 @@ After writing the grading script, let's test it out by grading several student s
 ![Image](lab7-screenshots/name.png)  
   
   
-## Tracing through the second student submission  
+## Tracing through the third student submission  
   
-
+* Reminder: as mentioned previously, the third student submission has a **wrong file name**.  
+* Let's trace through the student submission using my grading script. First, my script **removes the current student-submission file** and **git clones** the third student's repository as the current student-submission. Then initializes the variable **grade=0** and **copies the test file TestListExamples.java into student-submission**.  
+* Then at the line **if [ -f ./student-submission/$FILE1 ]**, it checks if $FILE1, which is **ListeExamples.java**, exists in the directory **./student-submission/**, this if condition is **false**, since the student saves the implementations under a file with wrong name. Thus the **then branch** with two echos **doesn't run**.  
+* The **else branch with two echos runs**. It runs the first echo line **echo "$FILE1 not found."**, which is shown in the Server output as "ListExamples.java not found.". Then runs **echo "Grade: [$grade/3]"**, which prints the student's current grade, 0/3 in the Server. Finally exists early at the line **exit 1**.  
+* The rest of the grading script don't run, since the program exits early in the first else branch (line 22) **exit 1** when no file of name **ListExamples** were found under the directory **./student-submission/**.  
+  
+  
+  
